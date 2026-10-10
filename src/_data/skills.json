@@ -1,21 +1,240 @@
 {
   "groups": [
     {
-      "name": "Programming languages",
-      "items": []
+      "name": "Languages",
+      "items": ["Python", "SQL"]
     },
     {
-      "name": "Data and SQL",
-      "items": []
+      "name": "Data & analytics",
+      "items": ["pandas", "NumPy", "DuckDB", "dbt", "PyArrow / Parquet", "Excel", "SciPy", "statsmodels", "Data validation", "ETL", "Feature engineering", "Statistical analysis"]
     },
     {
-      "name": "Machine learning",
-      "items": []
+      "name": "ML & retrieval",
+      "items": ["PyTorch", "scikit-learn", "LightGBM", "Sentence Transformers / SBERT", "TF-IDF", "SigLIP", "DINOv2", "FAISS", "Clustering", "Contrastive retrieval", "Ranking and calibration evaluation"]
     },
     {
-      "name": "Engineering and tools",
-      "items": []
+      "name": "Backend & document intelligence",
+      "items": ["FastAPI", "Pydantic", "JSON Schema", "SQLite", "AWS S3", "Amazon Textract", "OpenAI API"]
+    },
+    {
+      "name": "Engineering",
+      "items": ["Git / GitHub", "GitHub Actions", "pytest", "Hypothesis", "Ruff", "mypy", "Docker / Compose", "Linux / CLI", "PowerShell", "uv", "Streamlit", "Matplotlib", "Seaborn", "Plotly"]
+    },
+    {
+      "name": "Development workflow",
+      "items": ["AI-assisted development"]
     }
   ],
-  "coursework": []
+  "coursework": [
+    {
+      "term": "Fall 2023",
+      "code": "ACA-UF 101",
+      "name": "Arts and Cultures across Antiquity",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Fall 2023",
+      "code": "GWA-UF 101",
+      "name": "Global Works and Society: Antiquity",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Fall 2023",
+      "code": "MATH-UA 122",
+      "name": "Calculus II",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2023",
+      "code": "WREX-UF 101",
+      "name": "Writing as Exploration",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Spring 2024",
+      "code": "ACC-UF 102",
+      "name": "Arts and Cultures towards the Crossroads",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Spring 2024",
+      "code": "GWC-UF 102",
+      "name": "Global Works and Society in a Changing World",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Spring 2024",
+      "code": "MATH-UA 120",
+      "name": "Discrete Mathematics",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2024",
+      "code": "MATH-UA 123",
+      "name": "Calculus III",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2024",
+      "code": "WRCI-UF 102",
+      "name": "Writing as Critical Inquiry",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Fall 2024",
+      "code": "ACM-UF 201",
+      "name": "Arts and Cultures of Modernity",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Fall 2024",
+      "code": "CSCI-UA 102",
+      "name": "Data Structures",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2024",
+      "code": "DS-UA 111",
+      "name": "Data Science for Everyone",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2024",
+      "code": "GWM-UF 201",
+      "name": "Global Works and Society: Modernity",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Fall 2024",
+      "code": "MATH-UA 148",
+      "name": "Honors Linear Algebra",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2025",
+      "code": "CSCI-UA 201",
+      "name": "Computer Systems Org",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2025",
+      "code": "DS-UA 112",
+      "name": "Principles of Data Science II",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2025",
+      "code": "EAST-UA 247",
+      "name": "Elementary Japanese I",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Spring 2025",
+      "code": "MATH-UA 325",
+      "name": "Analysis",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2025",
+      "code": "CSCI-UA 202",
+      "name": "Operating Systems",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2025",
+      "code": "CSCI-UA 310",
+      "name": "Basic Algorithms",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2025",
+      "code": "CSCI-UA 479",
+      "name": "Data Management and Analysis",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2025",
+      "code": "MATH-UA 333",
+      "name": "Theory of Probability",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2026",
+      "code": "CSCI-UA 473",
+      "name": "Fundamentals of Machine Learning",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2026",
+      "code": "DS-UA 201",
+      "name": "Causal Inference",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2026",
+      "code": "EAST-UA 248",
+      "name": "Elementary Japanese II",
+      "status": "Completed",
+      "group": "additional"
+    },
+    {
+      "term": "Spring 2026",
+      "code": "MATH-UA 334",
+      "name": "Mathematical Statistics",
+      "status": "Completed",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2026",
+      "code": "DS-UA 202",
+      "name": "Responsible Data Science",
+      "status": "In progress",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2026",
+      "code": "DS-UA 301",
+      "name": "Advanced Topics in Data Science — Optimization and Linear Algebra for Machine Learning",
+      "status": "In progress",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2026",
+      "code": "MATH-UA 352",
+      "name": "Numerical Analysis",
+      "status": "In progress",
+      "group": "technical"
+    },
+    {
+      "term": "Fall 2026",
+      "code": "MATH-UA 353",
+      "name": "Linear and Nonlinear Optimization",
+      "status": "In progress",
+      "group": "technical"
+    }
+  ]
 }

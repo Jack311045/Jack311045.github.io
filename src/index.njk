@@ -36,25 +36,28 @@
             <p class="eyebrow">PERSONAL PROFILE</p>
             <h1>{{ profile.name }}</h1>
             <p class="lead">{{ profile.headline }}</p>
-            {% if profile.introduction %}
-              <p class="body-copy">{{ profile.introduction }}</p>
-            {% else %}
-              <p class="body-copy muted">A verified introduction will appear here when resume material is added.</p>
-            {% endif %}
+            <p class="body-copy">{{ profile.introduction }}</p>
             <div class="section-rule"></div>
-            <h2>Contact</h2>
-            {% if profile.contacts.length %}
-              <ul class="contact-list">
-                {% for contact in profile.contacts %}
-                  <li><span class="contact-label">{{ contact.label }}</span>
-                    {% if contact.href %}<a href="{{ contact.href }}" {% if contact.href | isExternalUrl %}target="_blank" rel="noreferrer"{% endif %}>{{ contact.value }}</a>{% else %}<span>{{ contact.value }}</span>{% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              <p class="body-copy muted">Public contact details have not been added yet.</p>
-            {% endif %}
-            <p class="source-note">Edit <code>src/_data/profile.json</code> to add resume-verified details.</p>
+            <div class="profile-facts">
+              <section class="profile-fact">
+                <h2>Education</h2>
+                <p>{{ profile.education.institution }}</p>
+                <p>{{ profile.education.degree }} · {{ profile.education.major }}</p>
+                <p>{{ profile.education.graduation }} · GPA {{ profile.education.gpa }} <span class="muted">({{ profile.education.gpaAsOf }})</span></p>
+              </section>
+              <section class="profile-fact">
+                <h2>Location</h2>
+                <p>{{ profile.location }}</p>
+              </section>
+              <section class="profile-fact">
+                <h2>Contact</h2>
+                <ul class="contact-list">
+                  {% for contact in profile.contacts %}
+                    <li><span class="contact-label">{{ contact.label }}</span><a href="{{ contact.href }}" {% if contact.href | isExternalUrl %}target="_blank" rel="noreferrer"{% endif %}>{{ contact.value }}</a></li>
+                  {% endfor %}
+                </ul>
+              </section>
+            </div>
           </article>
         </section>
 
@@ -63,23 +66,24 @@
           <article class="document">
             <p class="eyebrow">SELECTED WORK</p>
             <h1>Projects</h1>
-            <p class="body-copy muted">Project details are intentionally unpublished until verified.</p>
+            <p class="body-copy muted">Selected projects in data engineering, applied machine learning, semantic search, and document intelligence.</p>
             <div class="accordion-list" data-accordion-list="projects">
               {% for project in projects.items | sort(false, false, "order") %}
                 <details class="entry-card" {% if loop.first %}open{% endif %}>
                   <summary>
                     <span class="entry-title">{{ project.name }}</span>
-                    <span class="entry-subtitle">{{ project.summary or "Project details are not published yet." }}</span>
-                    <span class="entry-badge">Details pending</span>
+                    <span class="entry-subtitle">{{ project.summary }}</span>
+                    <span class="entry-badge">{{ project.status }}{% if project.dates %}<span class="badge-date">{{ project.dates }}</span>{% endif %}</span>
                   </summary>
                   <div class="entry-content">
-                    {% if project.problem %}<p><strong>Purpose</strong> {{ project.problem }}</p>{% endif %}
-                    {% if project.contribution %}<p><strong>Contribution</strong> {{ project.contribution }}</p>{% endif %}
-                    {% if project.technology.length %}<p><strong>Technology</strong> {{ project.technology | join(", ") }}</p>{% endif %}
-                    {% if project.verifiedResult %}<p><strong>Verified result</strong> {{ project.verifiedResult }}</p>{% endif %}
+                    <ul class="detail-list">{% for highlight in project.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>
+                    {% if project.technology.length %}
+                      <p class="detail-label">Technology</p>
+                      <ul class="tag-list">{% for technology in project.technology %}<li>{{ technology }}</li>{% endfor %}</ul>
+                    {% endif %}
                     {% if project.links.length %}
-                      <p class="entry-links">{% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noreferrer">{{ link.label }}</a>{% endfor %}</p>
-                    {% else %}<p class="muted">Add verified project notes and links in <code>src/_data/projects.json</code>.</p>{% endif %}
+                      <p class="entry-links">{% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</p>
+                    {% endif %}
                   </div>
                 </details>
               {% endfor %}
@@ -94,19 +98,20 @@
           <article class="document">
             <p class="eyebrow">WORK HISTORY</p>
             <h1>Experience</h1>
-            <p class="body-copy muted">Roles, dates, and contributions will be added from the current resume.</p>
+            <p class="body-copy muted">Internship, project, and earlier work across data science, research, and tutoring.</p>
             <div class="accordion-list">
               {% for role in experience.items | sort(false, false, "order") %}
                 <details class="entry-card" {% if loop.first %}open{% endif %}>
                   <summary>
                     <span class="entry-title">{{ role.name }}</span>
-                    <span class="entry-subtitle">{% if role.role %}{{ role.role }}{% else %}Role details not added{% endif %}{% if role.dates %} · {{ role.dates }}{% endif %}</span>
-                    <span class="entry-badge">Details pending</span>
+                    <span class="entry-subtitle">{{ role.role }}{% if role.dates %} · {{ role.dates }}{% endif %}{% if role.location %} · {{ role.location }}{% endif %}</span>
+                    <span class="entry-badge">{{ role.category }}</span>
                   </summary>
                   <div class="entry-content">
-                    {% if role.contribution %}<p><strong>Contribution</strong> {{ role.contribution }}</p>{% endif %}
-                    {% if role.verifiedResult %}<p><strong>Verified result</strong> {{ role.verifiedResult }}</p>{% endif %}
-                    <p class="muted">Add verified role details in <code>src/_data/experience.json</code>.</p>
+                    <ul class="detail-list">{% for highlight in role.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>
+                    {% if role.links.length %}
+                      <p class="entry-links">{% for link in role.links %}<a href="{{ link.url }}" target="_blank" rel="noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</p>
+                    {% endif %}
                   </div>
                 </details>
               {% endfor %}
@@ -121,19 +126,12 @@
           <article class="document resume-document">
             <p class="eyebrow">DOCUMENT</p>
             <h1>Resume</h1>
-            {% if resume.path %}
-              <div class="resume-actions">
-                <a class="action-button" href="{{ resume.path | url }}" download>Download PDF</a>
-                <a class="action-button action-secondary" href="{{ resume.path | url }}" target="_blank" rel="noreferrer">Open PDF</a>
-              </div>
-              <iframe class="resume-frame" src="{{ resume.path | url }}" title="Resume PDF preview"></iframe>
-            {% else %}
-              <div class="empty-document">
-                <div class="pdf-mark" aria-hidden="true">PDF</div>
-                <h2>Resume not added yet</h2>
-                <p class="body-copy muted">Place the approved PDF in <code>src/assets/resume/</code>, then set its path in <code>src/_data/resume.json</code>. The preview, open, and download links will all use that same file.</p>
-              </div>
-            {% endif %}
+            <div class="resume-actions">
+              <a class="action-button" href="{{ resume.path | url }}" download>Download PDF</a>
+              <a class="action-button action-secondary" href="{{ resume.path | url }}" target="_blank" rel="noreferrer">Open PDF</a>
+            </div>
+            <iframe class="resume-frame" src="{{ resume.path | url }}#view=FitH" title="Public resume PDF preview"></iframe>
+            <p class="resume-note">If the preview is unavailable in your browser, use Open PDF or Download PDF.</p>
           </article>
         </section>
 
@@ -142,24 +140,45 @@
           <article class="document">
             <p class="eyebrow">CAPABILITIES & EDUCATION</p>
             <h1>Skills & coursework</h1>
-            <p class="body-copy muted">Only skills and courses supported by the supplied resume will be listed.</p>
+            <p class="body-copy muted">A concise view of tools used across projects and coursework recorded through Fall 2026.</p>
             <h2>Skills</h2>
             <div class="skill-groups">
               {% for group in skills.groups %}
-                {% if group.items.length %}
-                  <section class="skill-group"><h3>{{ group.name }}</h3><ul class="tag-list">{% for item in group.items %}<li>{{ item }}</li>{% endfor %}</ul></section>
-                {% endif %}
+                <section class="skill-group"><h3>{{ group.name }}</h3><ul class="tag-list">{% for item in group.items %}<li>{{ item }}</li>{% endfor %}</ul></section>
               {% endfor %}
             </div>
-            {% if not hasCareerSkills %}
-              <p class="body-copy muted">No skills have been added yet. Update <code>src/_data/skills.json</code>.</p>
-            {% endif %}
             <h2 class="course-heading">Coursework</h2>
-            {% if skills.coursework.length %}
-              <ul class="course-list">{% for course in skills.coursework %}<li><span>{{ course.name }}</span><span class="course-status">{{ course.status }}</span></li>{% endfor %}</ul>
-            {% else %}
-              <p class="body-copy muted">Add the complete course list and mark each course Completed or In progress in <code>src/_data/skills.json</code>.</p>
-            {% endif %}
+            <p class="course-intro">Course status as of Fall 2026. Individual grades are not displayed.</p>
+            <section class="course-section" aria-labelledby="technical-coursework-heading">
+              <h3 id="technical-coursework-heading">Technical coursework</h3>
+              <div class="course-table-wrap" role="region" aria-label="Technical coursework by semester" tabindex="0">
+                <table class="course-table">
+                  <thead><tr><th scope="col">Semester</th><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Status</th></tr></thead>
+                  <tbody>
+                    {% for course in skills.coursework %}
+                      {% if course.group == "technical" %}
+                        <tr><td>{{ course.term }}</td><td>{{ course.code }}</td><td>{{ course.name }}</td><td><span class="course-status{% if course.status == 'In progress' %} status-in-progress{% endif %}">{{ course.status }}</span></td></tr>
+                      {% endif %}
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <details class="additional-coursework">
+              <summary>Additional coursework</summary>
+              <div class="course-table-wrap" role="region" aria-label="Additional coursework by semester" tabindex="0">
+                <table class="course-table">
+                  <thead><tr><th scope="col">Semester</th><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Status</th></tr></thead>
+                  <tbody>
+                    {% for course in skills.coursework %}
+                      {% if course.group == "additional" %}
+                        <tr><td>{{ course.term }}</td><td>{{ course.code }}</td><td>{{ course.name }}</td><td><span class="course-status">{{ course.status }}</span></td></tr>
+                      {% endif %}
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </details>
           </article>
         </section>
       </section>

@@ -3,26 +3,115 @@
     {
       "name": "Sustentra",
       "order": 1,
-      "role": "",
-      "dates": "",
-      "contribution": "",
-      "verifiedResult": ""
+      "role": "Data Science & Engineering Intern",
+      "dates": "Jun–Sep 2026",
+      "location": "Remote",
+      "category": "Internship",
+      "highlights": [
+        "Contributed to Python document workflows connecting AWS S3, Textract OCR, and OpenAI extraction with schema-backed JSON and field-level source context.",
+        "Worked with engineering and ESG/audit collaborators to turn review requirements into versioned schemas, validation checks, and traceable evidence flows.",
+        "Helped develop a seven-stage Streamlit auditor prototype; several stages use prepared fixtures rather than fully connected live services.",
+        "Historical work records cite 40+ documents and a 170+ test suite; the prototype was presented to 10+ audit-industry and client representatives."
+      ],
+      "links": [
+        {
+          "label": "Streamlit prototype",
+          "url": "https://github.com/Jack311045/sustentra_demo_ui"
+        },
+        {
+          "label": "Team platform",
+          "url": "https://github.com/Sustentra-INC/sustentra-platform"
+        }
+      ]
     },
     {
-      "name": "GigaCloud",
+      "name": "GigaCloud Technology",
       "order": 2,
-      "role": "",
-      "dates": "",
-      "contribution": "",
-      "verifiedResult": ""
+      "role": "Data Science Intern",
+      "dates": "Jul–Aug 2025",
+      "location": "Suzhou, China",
+      "category": "Internship",
+      "highlights": [
+        "Analyzed 100,000+ shipment records to study declared-versus-measured package dimensions, billing differences, and surcharge exposure.",
+        "Built package-geometry and carrier-threshold features and compared UPS/FedEx measurement stages using statistical analysis.",
+        "Shared packaging and risk-identification recommendations; no realized savings are attributed to the analysis."
+      ],
+      "links": [
+        {
+          "label": "UPS dimension analysis",
+          "url": "https://github.com/Jack311045/ups_dimension_analysis"
+        },
+        {
+          "label": "UPS billing-weight analysis",
+          "url": "https://github.com/Jack311045/ups_billing_weight_analysis"
+        },
+        {
+          "label": "FedEx dimension tracking",
+          "url": "https://github.com/Jack311045/fedex_dimension_tracking"
+        }
+      ]
     },
     {
       "name": "CITIC Securities",
       "order": 3,
-      "role": "",
+      "role": "Marketing / Data Analyst Intern",
+      "dates": "Jun–Jul 2025",
+      "location": "Henan, China",
+      "category": "Internship",
+      "highlights": [
+        "Analyzed options-trading and private-fund datasets to support financial-product research and internal discussions.",
+        "Summarized research to inform product positioning and data-informed marketing strategy discussions."
+      ],
+      "links": []
+    },
+    {
+      "name": "Veterans Coaching Program / Project",
+      "order": 4,
+      "role": "Research & Data Support",
+      "dates": "Jan–May 2026",
+      "location": "Remote",
+      "category": "Program work",
+      "highlights": [
+        "Researched grant opportunities and organized structured trackers for programs, contacts, application routes, and follow-ups.",
+        "Supported fundraising operations with research, data cleanup, and tailored outreach drafts."
+      ],
+      "links": []
+    },
+    {
+      "name": "Franklin Pharmacy",
+      "order": 5,
+      "role": "Clerk",
+      "dates": "Oct 2022–Jun 2023",
+      "location": "",
+      "category": "Earlier experience",
+      "highlights": [
+        "Maintained product and inventory records, entered item information, and checked pricing discrepancies."
+      ],
+      "links": []
+    },
+    {
+      "name": "Kids2Kids",
+      "order": 6,
+      "role": "Math Tutor",
+      "dates": "Sep 2020–Jun 2023",
+      "location": "",
+      "category": "Earlier experience",
+      "highlights": [
+        "Provided individualized mathematics tutoring for elementary- and middle-school students, breaking down concepts into reusable problem-solving steps."
+      ],
+      "links": []
+    },
+    {
+      "name": "Private Mathematics & Science Tutoring",
+      "order": 7,
+      "role": "Mathematics & Science Tutor",
       "dates": "",
-      "contribution": "",
-      "verifiedResult": ""
+      "location": "",
+      "category": "Earlier experience",
+      "highlights": [
+        "Developed individualized learning strategies and clear concept breakdowns for mathematics, science, and test-preparation topics."
+      ],
+      "links": []
     }
   ]
 }

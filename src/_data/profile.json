@@ -1,6 +1,26 @@
 {
   "name": "Jiaan Guo / Jack Guo",
-  "headline": "Professional portfolio",
-  "introduction": "",
-  "contacts": []
+  "headline": "Data Science & Applied ML",
+  "introduction": "I'm Jiaan Guo, also known as Jack. I'm a New York University undergraduate studying Data Science and Mathematics, expecting to graduate in May 2027. My work spans reproducible data pipelines, applied machine learning, semantic search, and document intelligence. Across internships and personal projects, I focus on turning messy inputs into structured, testable systems and explaining the reasoning behind them. I'm interested in opportunities in data science, applied ML, and data engineering.",
+  "education": {
+    "institution": "New York University",
+    "degree": "Bachelor of Arts",
+    "major": "Joint major in Data Science and Mathematics",
+    "graduation": "Expected May 2027",
+    "gpa": "3.64 / 4.00",
+    "gpaAsOf": "Through Spring 2026"
+  },
+  "location": "New York metropolitan area",
+  "contacts": [
+    {
+      "label": "Email",
+      "value": "jackguo2005@gmail.com",
+      "href": "mailto:jackguo2005@gmail.com"
+    },
+    {
+      "label": "GitHub",
+      "value": "github.com/Jack311045",
+      "href": "https://github.com/Jack311045"
+    }
+  ]
 }

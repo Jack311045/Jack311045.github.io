@@ -3,32 +3,122 @@
     {
       "name": "ChessLens",
       "order": 1,
-      "summary": "",
-      "problem": "",
-      "contribution": "",
-      "technology": [],
-      "verifiedResult": "",
-      "links": []
+      "status": "Active development",
+      "dates": "2026–Present",
+      "summary": "A reproducible chess data and ML pipeline built around large-scale PGN processing, SQL analytics, and leakage-aware evaluation.",
+      "technology": ["Python", "SQL", "DuckDB", "dbt", "PyArrow / Parquet", "LightGBM", "pytest", "GitHub Actions"],
+      "highlights": [
+        "Built streaming Lichess PGN ingestion with deterministic game IDs, HMAC player identifiers, sharded Parquet, resumable manifests, checksums, and staged publication.",
+        "Recorded ingestion report: 10.64M accepted games, 718.56M moves, and 43 shards; this is a saved report, not a fresh run for this portfolio.",
+        "Created a DuckDB/dbt warehouse with 8 models and 39 data tests. The recorded 47 passing nodes were run against a deterministic 10% analysis sample, not the full move set.",
+        "Added temporal and player-holdout controls with leakage audits for policy and value baselines.",
+        "Implemented frequency, logistic-value, and LightGBM ranking baselines with ranking, calibration, subgroup, and game-level bootstrap evaluation."
+      ],
+      "links": [
+        {
+          "label": "Source code",
+          "url": "https://github.com/Jack311045/ChessLens"
+        }
+      ]
     },
     {
       "name": "Sustentra",
       "order": 2,
-      "summary": "",
-      "problem": "",
-      "contribution": "",
-      "technology": [],
-      "verifiedResult": "",
-      "links": []
+      "status": "Team internship project",
+      "dates": "Jun–Sep 2026",
+      "summary": "Schema-driven document intelligence and audit workflows for reviewing structured ESG evidence.",
+      "technology": ["Python", "AWS S3", "Amazon Textract", "OpenAI API", "JSON Schema", "FastAPI", "Streamlit", "pytest"],
+      "highlights": [
+        "Contributed to a PDF/OCR pipeline that turns document content into schema-backed JSON with source snippets for reviewer traceability.",
+        "Translated ESG and audit requirements into versioned schemas, validation rules, and cross-service contracts with engineering and domain collaborators.",
+        "Helped build a seven-stage Streamlit auditor prototype for intake, extraction review, validation, and evidence workflows; some stages use prepared fixtures rather than connected live services.",
+        "Historical work records cite 40+ documents and a 170+ test suite; the prototype was presented to 10+ audit-industry and client representatives."
+      ],
+      "links": [
+        {
+          "label": "Streamlit prototype",
+          "url": "https://github.com/Jack311045/sustentra_demo_ui"
+        },
+        {
+          "label": "Team platform",
+          "url": "https://github.com/Sustentra-INC/sustentra-platform"
+        }
+      ]
     },
     {
-      "name": "Recipe Discovery",
+      "name": "Recipe Discovery & Semantic Search",
       "order": 3,
-      "summary": "",
-      "problem": "",
-      "contribution": "",
-      "technology": [],
-      "verifiedResult": "",
-      "links": []
+      "status": "Personal project",
+      "dates": "Jan–May 2026",
+      "summary": "Hybrid and multimodal recipe search with custom clustering and an interactive exploration interface.",
+      "technology": ["Python", "PyTorch", "Sentence Transformers", "SigLIP", "TF-IDF", "scikit-learn", "Streamlit"],
+      "highlights": [
+        "Combined SBERT dense embeddings with TF-IDF retrieval, and added SigLIP image, text, and combined image-text search over the Food.com Recipes and Interactions dataset.",
+        "Implemented dietary and recipe filters, negative-feedback query adjustment, optional rating-aware reranking, and a session-based shopping list.",
+        "Built a PyTorch K-means implementation with k-means++ initialization, Lloyd updates, empty-cluster reseeding, and multiple restarts.",
+        "Added PCA and autoencoder-based embedding views for interactive cluster exploration."
+      ],
+      "links": [
+        {
+          "label": "Source code",
+          "url": "https://github.com/Jack311045/recipe-discovery-webapp"
+        }
+      ]
+    },
+    {
+      "name": "Met Museum Cross-Modal Search",
+      "order": 4,
+      "status": "Personal project",
+      "dates": "Dec 2025–Jan 2026",
+      "summary": "Text-to-image and image-to-text retrieval over Metropolitan Museum of Art Open Access data.",
+      "technology": ["Python", "DINOv2", "Sentence Transformers", "FAISS", "FastAPI", "Streamlit"],
+      "highlights": [
+        "Combined image and text features with contrastive projection heads for cross-modal retrieval.",
+        "Built FAISS-backed text-to-image and image-to-text search.",
+        "Exposed the workflow through CLI, FastAPI, and Streamlit interfaces."
+      ],
+      "links": [
+        {
+          "label": "Source code",
+          "url": "https://github.com/Jack311045/met_museum_search"
+        }
+      ]
+    },
+    {
+      "name": "NYC Taxi Autoencoder Demo",
+      "order": 5,
+      "status": "Interactive ML demo",
+      "dates": "",
+      "summary": "A PyTorch autoencoder demo for exploring a two-dimensional latent representation of taxi data.",
+      "technology": ["Python", "PyTorch", "Streamlit", "Plotly"],
+      "highlights": [
+        "Prepared numeric inputs for an autoencoder-based two-dimensional representation.",
+        "Exposed training and validation loss alongside an interactive Streamlit/Plotly view."
+      ],
+      "links": [
+        {
+          "label": "Source code",
+          "url": "https://github.com/Jack311045/nyc-taxi-autoencoder"
+        }
+      ]
+    },
+    {
+      "name": "Chunithm Request Bot",
+      "order": 6,
+      "status": "Open-source bot",
+      "dates": "",
+      "summary": "A Discord bot for managing Chunithm song requests during livestream sessions.",
+      "technology": ["Python", "discord.py", "SQLite"],
+      "highlights": [
+        "Added fuzzy song matching and owner-controlled request sessions.",
+        "Managed three-song request queues with SQLite persistence."
+      ],
+      "links": [
+        {
+          "label": "Source code",
+          "url": "https://github.com/Jack311045/chunithm-request-bot"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jiaan Guo - Public Resume</title>
+    <style>
+      @page { size: Letter; margin: .42in .48in; }
+      * { box-sizing: border-box; }
+      html { color: #202329; font-family: Arial, Helvetica, sans-serif; font-size: 8.4pt; }
+      body { margin: 0; line-height: 1.2; }
+      h1 { margin: 0 0 3px; color: #111827; font-size: 21pt; letter-spacing: -.4pt; }
+      .alias { color: #5b6472; font-size: 12pt; font-weight: 400; }
+      .headline { margin: 0 0 5px; color: #374151; font-size: 9.4pt; }
+      .contact { display: flex; flex-wrap: wrap; gap: 3px 12px; margin: 0; color: #374151; font-size: 8.1pt; }
+      a { color: #174c78; text-decoration: none; }
+      section { margin-top: 10px; }
+      h2 { margin: 0 0 5px; padding-bottom: 3px; border-bottom: 1px solid #9ca3af; color: #1f3a56; font-size: 9.2pt; letter-spacing: .8pt; text-transform: uppercase; }
+      p { margin: 2px 0; }
+      .education-line, .entry-heading { display: flex; justify-content: space-between; gap: 12px; }
+      .education-line strong, .entry-heading strong { color: #17202d; }
+      .education-detail { color: #414a56; }
+      .entry { margin: 0 0 6px; break-inside: avoid; }
+      .entry-heading { margin-bottom: 2px; }
+      .entry-heading span, .entry-subline { color: #4b5563; }
+      .entry-subline { margin-bottom: 2px; font-size: 7.8pt; }
+      ul { margin: 2px 0 0; padding-left: 14px; }
+      li { margin: 1px 0; padding-left: 1px; }
+      .skills p { margin: 2px 0; }
+      .skills strong { color: #263c51; }
+      .coursework { color: #414a56; }
+      .note { margin-top: 4px; color: #69717d; font-size: 7.3pt; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Jiaan Guo <span class="alias">| Jack Guo</span></h1>
+      <p class="headline">Data Science &amp; Applied ML</p>
+      <p class="contact">
+        <span>New York metropolitan area</span>
+        <a href="mailto:jackguo2005@gmail.com">jackguo2005@gmail.com</a>
+        <a href="https://github.com/Jack311045">github.com/Jack311045</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education-line"><strong>New York University</strong><span>Expected May 2027</span></div>
+      <p class="education-detail">Bachelor of Arts, joint major in Data Science and Mathematics · GPA 3.64/4.00 through Spring 2026</p>
+      <p class="coursework">Relevant coursework: Data Structures, Data Management and Analysis, Fundamentals of Machine Learning, Causal Inference, Mathematical Statistics, Linear and Nonlinear Optimization (in progress)</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <article class="entry">
+        <div class="entry-heading"><strong>Sustentra</strong><span>Jun-Sep 2026 · Remote</span></div>
+        <p class="entry-subline">Data Science &amp; Engineering Intern</p>
+        <ul>
+          <li>Contributed to Python document workflows connecting S3, Textract OCR, and OpenAI extraction with schema-backed JSON and field-level source context.</li>
+          <li>Translated review requirements into versioned schemas, validation checks, and traceable evidence flows with engineering and ESG/audit collaborators.</li>
+          <li>Helped build a seven-stage Streamlit auditor prototype; some stages use prepared fixtures rather than connected live services.</li>
+        </ul>
+      </article>
+      <article class="entry">
+        <div class="entry-heading"><strong>GigaCloud Technology</strong><span>Jul-Aug 2025 · Suzhou, China</span></div>
+        <p class="entry-subline">Data Science Intern</p>
+        <ul>
+          <li>Analyzed 100,000+ shipment records to study package-dimension differences, billing changes, and surcharge exposure.</li>
+          <li>Built geometry and carrier-threshold features and compared UPS/FedEx measurement stages; shared packaging and risk-identification recommendations.</li>
+        </ul>
+      </article>
+      <article class="entry">
+        <div class="entry-heading"><strong>CITIC Securities</strong><span>Jun-Jul 2025 · Henan, China</span></div>
+        <p class="entry-subline">Marketing / Data Analyst Intern</p>
+        <ul><li>Analyzed options-trading and private-fund datasets for financial-product research, product positioning, and internal strategy discussions.</li></ul>
+      </article>
+      <article class="entry">
+        <div class="entry-heading"><strong>Veterans Coaching Program / Project</strong><span>Jan-May 2026 · Remote</span></div>
+        <p class="entry-subline">Research &amp; Data Support</p>
+        <ul><li>Researched grant opportunities and organized structured trackers supporting fundraising operations and follow-up.</li></ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      <article class="entry">
+        <div class="entry-heading"><strong>ChessLens</strong><span>2026-Present · Active development</span></div>
+        <ul>
+          <li>Built streaming Lichess PGN ingestion with deterministic IDs, HMAC player identifiers, sharded Parquet, resumable manifests, and staged validation.</li>
+          <li>Recorded ingestion report: 10.64M accepted games, 718.56M moves, 43 shards. Developed DuckDB/dbt analytics and leakage-aware classical policy, value, and ranking baselines.</li>
+        </ul>
+      </article>
+      <article class="entry">
+        <div class="entry-heading"><strong>Recipe Discovery &amp; Semantic Search</strong><span>Jan-May 2026</span></div>
+        <ul>
+          <li>Combined SBERT and TF-IDF retrieval with SigLIP image/text search, dietary filters, negative feedback, and rating-aware reranking.</li>
+          <li>Implemented PyTorch K-means with k-means++ initialization, Lloyd updates, empty-cluster reseeding, and multiple restarts.</li>
+        </ul>
+      </article>
+      <article class="entry">
+        <div class="entry-heading"><strong>Met Museum Cross-Modal Search</strong><span>Dec 2025-Jan 2026</span></div>
+        <ul><li>Built DINOv2/text-feature retrieval with contrastive projection heads and FAISS for text-to-image and image-to-text search.</li></ul>
+      </article>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <p><strong>Languages:</strong> Python, SQL</p>
+      <p><strong>Data:</strong> pandas, NumPy, DuckDB, dbt, PyArrow/Parquet, SciPy, statsmodels, ETL, feature engineering, statistical analysis</p>
+      <p><strong>ML &amp; retrieval:</strong> PyTorch, scikit-learn, LightGBM, Sentence Transformers, TF-IDF, SigLIP, DINOv2, FAISS</p>
+      <p><strong>Engineering &amp; document systems:</strong> FastAPI, Pydantic, JSON Schema, AWS S3, Textract, OpenAI API, pytest, Hypothesis, Git/GitHub Actions, Docker, Ruff, mypy, Streamlit</p>
+      <p><strong>Development workflow:</strong> AI-assisted development</p>
+      <p class="note">Recorded project figures reflect saved reports; they are not represented as newly rerun results.</p>
+    </section>
+  </body>
+</html>
