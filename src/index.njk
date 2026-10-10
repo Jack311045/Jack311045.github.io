@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1e1e1e">
+    <meta name="description" content="{{ profile.name }} — professional portfolio">
+    <title>{{ profile.name }} | Portfolio</title>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+    <script src="{{ '/assets/js/site.js' | url }}" defer></script>
+  </head>
+  <body>
+    <main class="window">
+      <header class="titlebar">
+        <div class="window-mark" aria-hidden="true">◇</div>
+        <span class="window-title">Portfolio — Visual Studio Code</span>
+        <span class="window-controls" aria-hidden="true">_ □ ×</span>
+      </header>
+
+      <nav class="file-tabs" role="tablist" aria-label="Portfolio files">
+        <button class="file-tab is-active" id="tab-readme" role="tab" aria-selected="true" aria-controls="panel-readme" tabindex="0" data-tab="readme"><span class="file-icon icon-md" aria-hidden="true">M</span>README.md</button>
+        <button class="file-tab" id="tab-projects" role="tab" aria-selected="false" aria-controls="panel-projects" tabindex="-1" data-tab="projects"><span class="file-icon icon-md" aria-hidden="true">M</span>projects.md</button>
+        <button class="file-tab" id="tab-experience" role="tab" aria-selected="false" aria-controls="panel-experience" tabindex="-1" data-tab="experience"><span class="file-icon icon-md" aria-hidden="true">M</span>experience.md</button>
+        <button class="file-tab" id="tab-resume" role="tab" aria-selected="false" aria-controls="panel-resume" tabindex="-1" data-tab="resume"><span class="file-icon icon-pdf" aria-hidden="true">P</span>resume.pdf</button>
+        <button class="file-tab" id="tab-skills" role="tab" aria-selected="false" aria-controls="panel-skills" tabindex="-1" data-tab="skills"><span class="file-icon icon-md" aria-hidden="true">M</span>skills.md</button>
+      </nav>
+
+      <div class="breadcrumb" aria-label="Current location">
+        <span>portfolio</span><span aria-hidden="true">›</span><span>Jack Guo</span><span aria-hidden="true">›</span><span id="breadcrumb-file">README.md</span>
+      </div>
+
+      <section class="editor" aria-label="Portfolio content">
+        <section class="editor-panel is-visible" id="panel-readme" role="tabpanel" aria-labelledby="tab-readme" tabindex="0">
+          <div class="line-number" aria-hidden="true">01</div>
+          <article class="document">
+            <p class="eyebrow">PERSONAL PROFILE</p>
+            <h1>{{ profile.name }}</h1>
+            <p class="lead">{{ profile.headline }}</p>
+            {% if profile.introduction %}
+              <p class="body-copy">{{ profile.introduction }}</p>
+            {% else %}
+              <p class="body-copy muted">A verified introduction will appear here when resume material is added.</p>
+            {% endif %}
+            <div class="section-rule"></div>
+            <h2>Contact</h2>
+            {% if profile.contacts.length %}
+              <ul class="contact-list">
+                {% for contact in profile.contacts %}
+                  <li><span class="contact-label">{{ contact.label }}</span>
+                    {% if contact.href %}<a href="{{ contact.href }}" {% if contact.href | isExternalUrl %}target="_blank" rel="noreferrer"{% endif %}>{{ contact.value }}</a>{% else %}<span>{{ contact.value }}</span>{% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p class="body-copy muted">Public contact details have not been added yet.</p>
+            {% endif %}
+            <p class="source-note">Edit <code>src/_data/profile.json</code> to add resume-verified details.</p>
+          </article>
+        </section>
+
+        <section class="editor-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0" hidden>
+          <div class="line-number" aria-hidden="true">02</div>
+          <article class="document">
+            <p class="eyebrow">SELECTED WORK</p>
+            <h1>Projects</h1>
+            <p class="body-copy muted">Project details are intentionally unpublished until verified.</p>
+            <div class="accordion-list" data-accordion-list="projects">
+              {% for project in projects.items | sort(false, false, "order") %}
+                <details class="entry-card" {% if loop.first %}open{% endif %}>
+                  <summary>
+                    <span class="entry-title">{{ project.name }}</span>
+                    <span class="entry-subtitle">{{ project.summary or "Project details are not published yet." }}</span>
+                    <span class="entry-badge">Details pending</span>
+                  </summary>
+                  <div class="entry-content">
+                    {% if project.problem %}<p><strong>Purpose</strong> {{ project.problem }}</p>{% endif %}
+                    {% if project.contribution %}<p><strong>Contribution</strong> {{ project.contribution }}</p>{% endif %}
+                    {% if project.technology.length %}<p><strong>Technology</strong> {{ project.technology | join(", ") }}</p>{% endif %}
+                    {% if project.verifiedResult %}<p><strong>Verified result</strong> {{ project.verifiedResult }}</p>{% endif %}
+                    {% if project.links.length %}
+                      <p class="entry-links">{% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noreferrer">{{ link.label }}</a>{% endfor %}</p>
+                    {% else %}<p class="muted">Add verified project notes and links in <code>src/_data/projects.json</code>.</p>{% endif %}
+                  </div>
+                </details>
+              {% endfor %}
+              <div class="extra-items" hidden></div>
+            </div>
+            <button class="text-button show-more" type="button" aria-expanded="false">Show more <span aria-hidden="true">↓</span></button>
+          </article>
+        </section>
+
+        <section class="editor-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0" hidden>
+          <div class="line-number" aria-hidden="true">03</div>
+          <article class="document">
+            <p class="eyebrow">WORK HISTORY</p>
+            <h1>Experience</h1>
+            <p class="body-copy muted">Roles, dates, and contributions will be added from the current resume.</p>
+            <div class="accordion-list">
+              {% for role in experience.items | sort(false, false, "order") %}
+                <details class="entry-card" {% if loop.first %}open{% endif %}>
+                  <summary>
+                    <span class="entry-title">{{ role.name }}</span>
+                    <span class="entry-subtitle">{% if role.role %}{{ role.role }}{% else %}Role details not added{% endif %}{% if role.dates %} · {{ role.dates }}{% endif %}</span>
+                    <span class="entry-badge">Details pending</span>
+                  </summary>
+                  <div class="entry-content">
+                    {% if role.contribution %}<p><strong>Contribution</strong> {{ role.contribution }}</p>{% endif %}
+                    {% if role.verifiedResult %}<p><strong>Verified result</strong> {{ role.verifiedResult }}</p>{% endif %}
+                    <p class="muted">Add verified role details in <code>src/_data/experience.json</code>.</p>
+                  </div>
+                </details>
+              {% endfor %}
+              <div class="extra-items" hidden></div>
+            </div>
+            <button class="text-button show-more" type="button" aria-expanded="false">Show more <span aria-hidden="true">↓</span></button>
+          </article>
+        </section>
+
+        <section class="editor-panel" id="panel-resume" role="tabpanel" aria-labelledby="tab-resume" tabindex="0" hidden>
+          <div class="line-number" aria-hidden="true">04</div>
+          <article class="document resume-document">
+            <p class="eyebrow">DOCUMENT</p>
+            <h1>Resume</h1>
+            {% if resume.path %}
+              <div class="resume-actions">
+                <a class="action-button" href="{{ resume.path | url }}" download>Download PDF</a>
+                <a class="action-button action-secondary" href="{{ resume.path | url }}" target="_blank" rel="noreferrer">Open PDF</a>
+              </div>
+              <iframe class="resume-frame" src="{{ resume.path | url }}" title="Resume PDF preview"></iframe>
+            {% else %}
+              <div class="empty-document">
+                <div class="pdf-mark" aria-hidden="true">PDF</div>
+                <h2>Resume not added yet</h2>
+                <p class="body-copy muted">Place the approved PDF in <code>src/assets/resume/</code>, then set its path in <code>src/_data/resume.json</code>. The preview, open, and download links will all use that same file.</p>
+              </div>
+            {% endif %}
+          </article>
+        </section>
+
+        <section class="editor-panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" tabindex="0" hidden>
+          <div class="line-number" aria-hidden="true">05</div>
+          <article class="document">
+            <p class="eyebrow">CAPABILITIES & EDUCATION</p>
+            <h1>Skills & coursework</h1>
+            <p class="body-copy muted">Only skills and courses supported by the supplied resume will be listed.</p>
+            <h2>Skills</h2>
+            <div class="skill-groups">
+              {% for group in skills.groups %}
+                {% if group.items.length %}
+                  <section class="skill-group"><h3>{{ group.name }}</h3><ul class="tag-list">{% for item in group.items %}<li>{{ item }}</li>{% endfor %}</ul></section>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% if not hasCareerSkills %}
+              <p class="body-copy muted">No skills have been added yet. Update <code>src/_data/skills.json</code>.</p>
+            {% endif %}
+            <h2 class="course-heading">Coursework</h2>
+            {% if skills.coursework.length %}
+              <ul class="course-list">{% for course in skills.coursework %}<li><span>{{ course.name }}</span><span class="course-status">{{ course.status }}</span></li>{% endfor %}</ul>
+            {% else %}
+              <p class="body-copy muted">Add the complete course list and mark each course Completed or In progress in <code>src/_data/skills.json</code>.</p>
+            {% endif %}
+          </article>
+        </section>
+      </section>
+
+      <section class="terminal" id="terminal-panel" aria-label="Decorative editor panel">
+        <div class="panel-tabs" role="tablist" aria-label="Editor panels">
+          <button type="button" role="tab" aria-selected="false" data-panel="problems">Problems</button>
+          <button type="button" role="tab" aria-selected="false" data-panel="output">Output</button>
+          <button type="button" role="tab" aria-selected="false" data-panel="debug">Debug Console</button>
+          <button type="button" role="tab" aria-selected="true" class="panel-active" data-panel="terminal">Terminal</button>
+          <button type="button" role="tab" aria-selected="false" data-panel="ports">Ports</button>
+          <button type="button" role="tab" aria-selected="false" data-panel="jupyter">Jupyter</button>
+          <button class="panel-collapse" type="button" aria-expanded="true" aria-controls="panel-content">Collapse panel</button>
+        </div>
+        <div class="panel-content" id="panel-content" role="tabpanel" aria-live="polite">
+          <pre data-panel-content="terminal"><span class="prompt">PS C:\jack311045\jack311045&gt;</span> portfolio
+Static portfolio preview. No shell commands are executed.</pre>
+        </div>
+      </section>
+      <footer class="statusbar"><span>Portfolio</span><span>UTF-8</span><span>Static site</span></footer>
+    </main>
+  </body>
+</html>

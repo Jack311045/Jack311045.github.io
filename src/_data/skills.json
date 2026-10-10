@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {
+      "name": "Programming languages",
+      "items": []
+    },
+    {
+      "name": "Data and SQL",
+      "items": []
+    },
+    {
+      "name": "Machine learning",
+      "items": []
+    },
+    {
+      "name": "Engineering and tools",
+      "items": []
+    }
+  ],
+  "coursework": []
+}
