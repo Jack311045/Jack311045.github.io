@@ -14,8 +14,8 @@ The build writes static files to `_site/`. Deploy this folder to the root of the
 
 ## Update content
 
-- Edit `src/_data/profile.json` for the 70–110 word introduction, verified education, and approved public contact links.
-- Edit `src/_data/projects.json` for project summaries, contributions, technologies, verified results, and links. Keep ChessLens, Sustentra, and Recipe Discovery as the first three entries.
+- Edit `src/_data/profile.json` for the introduction (array of paragraphs), verified education, and approved public contact links.
+- Edit `src/_data/projects.json` for project summaries, contributions, technologies, verified results, and links. Keep ChessLens, Multi-Party Conversational AI for Discord, and Sustentra ESG Evidence Platform as the first three entries.
 - Edit `src/_data/experience.json` for titles, dates, contributions, and verified results. Keep Sustentra, GigaCloud, and CITIC Securities as the first three entries.
 - Edit `src/_data/skills.json` to add verified skills and coursework; label each course `Completed` or `In progress` and group it as `technical` or `additional`.
 - Keep only the approved public resume PDF in `src/assets/resume/` and set its site-relative path in `src/_data/resume.json`. The preview, open, and download links all use this same file. If preparing a public copy from a private source resume, redact sensitive details before adding the copy here.

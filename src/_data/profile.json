@@ -1,16 +1,20 @@
 {
   "name": "Jiaan Guo / Jack Guo",
-  "headline": "Data Science & Applied ML",
-  "introduction": "I'm Jiaan Guo, also known as Jack. I'm a New York University undergraduate studying Data Science and Mathematics, expecting to graduate in May 2027. My work spans reproducible data pipelines, applied machine learning, semantic search, and document intelligence. Across internships and personal projects, I focus on turning messy inputs into structured, testable systems and explaining the reasoning behind them. I'm interested in opportunities in data science, applied ML, and data engineering.",
+  "headline": "Applied AI, Data & Full-Stack Engineer",
+  "introduction": [
+    "Senior at New York University studying Data Science and Mathematics with a minor in Computer Science (Class of 2027). I build production data pipelines, auditable AI workflows, and full-stack software systems—turning messy real-world data and ambiguous requirements into tested, deterministic, and scalable products.",
+    "Across internships at Sustentra, GigaCloud Technology, and CITIC Securities, I’ve shipped AWS/OpenAI document-intelligence pipelines, FastAPI + React/TypeScript web applications with PostgreSQL multi-tenant isolation, 100k+-row logistics cost-driver models, and client-facing financial strategy analyses. Outside of internships, I engineer large-scale ML and agentic systems such as ChessLens (10.64M games / 718.56M moves) and a multi-party LLM-routing Discord agent.",
+    "Targeting 2027 New Grad roles in Applied AI / Software Engineering, Data & ML Infrastructure, and Quantitative / Business Analytics."
+  ],
   "education": {
     "institution": "New York University",
-    "degree": "Bachelor of Science",
-    "major": "Joint major in Data Science and Mathematics",
+    "degree": "B.A. in Data Science and Mathematics",
+    "major": "Minor in Computer Science",
     "graduation": "Expected May 2027",
     "gpa": "3.64 / 4.00",
     "gpaAsOf": "Through Spring 2026"
   },
-  "location": "New York metropolitan area",
+  "location": "New York City Metropolitan Area",
   "contacts": [
     {
       "label": "Email",
@@ -21,6 +25,11 @@
       "label": "GitHub",
       "value": "github.com/Jack311045",
       "href": "https://github.com/Jack311045"
+    },
+    {
+      "label": "LinkedIn",
+      "value": "linkedin.com/in/jiaan-guo-123772343",
+      "href": "https://www.linkedin.com/in/jiaan-guo-123772343/"
     }
   ]
 }

@@ -4,14 +4,14 @@
       "name": "Sustentra",
       "order": 1,
       "role": "Data Science & Engineering Intern",
-      "dates": "Jun–Sep 2026",
+      "dates": "May 2026 – Sep 2026",
       "location": "Remote",
       "category": "Internship",
       "highlights": [
-        "Contributed to Python document workflows connecting AWS S3, Textract OCR, and OpenAI extraction with schema-backed JSON and field-level source context.",
-        "Worked with engineering and ESG/audit collaborators to turn review requirements into versioned schemas, validation checks, and traceable evidence flows.",
-        "Helped develop a seven-stage Streamlit auditor prototype; several stages use prepared fixtures rather than fully connected live services.",
-        "Historical work records cite 40+ documents and a 170+ test suite; the prototype was presented to 10+ audit-industry and client representatives."
+        "Built an automated Python document-intelligence pipeline (AWS S3, Amazon Textract, OpenAI API) processing 40+ multi-page ESG filings in ≤30s with >99% client-validated field accuracy and 98% first-pass JSON schema validation.",
+        "Translated ISO 14064, ISSA 5000, and NY Part 253 assurance standards into versioned JSON schemas and deterministic validation rules covering 90 formula records, 63 combustion emission factors, and 20 evidence categories.",
+        "Scaffolded a FastAPI backend and React/TypeScript frontend (Docker Compose), implemented review-decision APIs with immutable candidate snapshots, and added PostgreSQL Row-Level Security (RLS) multi-tenant integration tests with Alembic migrations.",
+        "Built and unit-tested an authentication email service (SMTP and Amazon SES) and wrote 170+ schema, parser, and regression tests with synthetic fixtures—shipping through peer code reviews and CI while demoing a 7-stage Streamlit prototype to 10+ audit and client stakeholders."
       ],
       "links": [
         {
@@ -28,13 +28,13 @@
       "name": "GigaCloud Technology",
       "order": 2,
       "role": "Data Science Intern",
-      "dates": "Jul–Aug 2025",
+      "dates": "Jul 2025 – Aug 2025",
       "location": "Suzhou, China",
       "category": "Internship",
       "highlights": [
-        "Analyzed 100,000+ shipment records to study declared-versus-measured package dimensions, billing differences, and surcharge exposure.",
-        "Built package-geometry and carrier-threshold features and compared UPS/FedEx measurement stages using statistical analysis.",
-        "Shared packaging and risk-identification recommendations; no realized savings are attributed to the analysis."
+        "Analyzed 100,000+ shipment records across carrier zones in Python, uncovering dimensional surcharge exposure in ~33% of shipments—with girth and longest-side thresholds driving 80%–90% of grouped surcharge cases.",
+        "Reconciled multi-sheet Excel billing and operational ledgers by tracking number across five deterministic validation rules to isolate unexplained billing-weight variances.",
+        "Built modular OLS regression, statistical testing, and visualization scripts to quantify post-shipment dimensional variance and recommend packaging adjustments near carrier thresholds."
       ],
       "links": [
         {
@@ -54,13 +54,14 @@
     {
       "name": "CITIC Securities",
       "order": 3,
-      "role": "Marketing / Data Analyst Intern",
-      "dates": "Jun–Jul 2025",
+      "role": "Data Analyst Intern, Marketing",
+      "dates": "Jun 2025 – Jul 2025",
       "location": "Henan, China",
       "category": "Internship",
       "highlights": [
-        "Analyzed options-trading and private-fund datasets to support financial-product research and internal discussions.",
-        "Summarized research to inform product positioning and data-informed marketing strategy discussions."
+        "Partnered with a team to evaluate hundreds of private-fund and options-trading products in Excel across annualized return, maximum drawdown, volatility, and performance over varying market cycles.",
+        "Benchmarked competing strategies across major Chinese investment banks and compiled target-client profiles and prospect lists to guide business development outreach.",
+        "Co-authored Excel product-comparison matrices and PowerPoint strategy decks for morning team briefings—with selected recommendations adopted for external client presentations—while leveraging AI agents and team-tested Python scripts to validate financial outputs and accelerate reporting."
       ],
       "links": []
     },

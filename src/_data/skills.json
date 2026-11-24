@@ -2,27 +2,23 @@
   "groups": [
     {
       "name": "Languages",
-      "items": ["Python", "SQL"]
+      "items": ["Python", "SQL", "TypeScript", "JavaScript", "Java", "C", "C++", "Bash"]
     },
     {
-      "name": "Data & analytics",
-      "items": ["pandas", "NumPy", "DuckDB", "dbt", "PyArrow / Parquet", "Excel", "SciPy", "statsmodels", "Data validation", "ETL", "Feature engineering", "Statistical analysis"]
+      "name": "Full-Stack & Backend Systems",
+      "items": ["FastAPI", "React", "Next.js", "REST APIs", "PostgreSQL (RLS)", "SQLAlchemy", "Alembic", "Pydantic", "Asyncio", "JSON Schema", "Docker / Compose", "AWS (S3, Textract, SES)"]
     },
     {
-      "name": "ML & retrieval",
-      "items": ["PyTorch", "scikit-learn", "LightGBM", "Sentence Transformers / SBERT", "TF-IDF", "SigLIP", "DINOv2", "FAISS", "Clustering", "Contrastive retrieval", "Ranking and calibration evaluation"]
+      "name": "Applied AI & Machine Learning",
+      "items": ["PyTorch", "LightGBM", "scikit-learn", "ONNX Runtime", "FAISS", "RAG", "Agentic AI & LLM Routing", "Structured Outputs", "LLM Evaluation", "OpenAI / Anthropic / Gemini APIs", "Prompt Engineering", "Sentence Transformers", "DINOv2", "SigLIP", "MLflow", "Optuna"]
     },
     {
-      "name": "Backend & document intelligence",
-      "items": ["FastAPI", "Pydantic", "JSON Schema", "SQLite", "AWS S3", "Amazon Textract", "OpenAI API"]
+      "name": "Data Engineering & Analytics",
+      "items": ["DuckDB", "dbt", "PyArrow / Parquet", "pandas", "NumPy", "SciPy", "statsmodels", "ETL", "Data Validation", "Ranking & Calibration Evaluation", "Excel", "Power BI", "PowerPoint", "Streamlit", "Matplotlib", "Seaborn"]
     },
     {
-      "name": "Engineering",
-      "items": ["Git / GitHub", "GitHub Actions", "pytest", "Hypothesis", "Ruff", "mypy", "Docker / Compose", "Linux / CLI", "PowerShell", "uv", "Streamlit", "Matplotlib", "Seaborn", "Plotly"]
-    },
-    {
-      "name": "Development workflow",
-      "items": ["AI-assisted development"]
+      "name": "Engineering & Workflow",
+      "items": ["Git / GitHub", "GitHub Actions (CI/CD)", "pytest", "Ruff", "mypy", "Linux", "Performance Profiling", "AI-Assisted Development (Claude Code, GitHub Copilot)"]
     }
   ],
   "coursework": [
@@ -233,6 +229,20 @@
       "term": "Fall 2026",
       "code": "MATH-UA 353",
       "name": "Linear and Nonlinear Optimization",
+      "status": "In progress",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2027",
+      "code": "—",
+      "name": "Deep Learning",
+      "status": "In progress",
+      "group": "technical"
+    },
+    {
+      "term": "Spring 2027",
+      "code": "—",
+      "name": "Processing Big Data",
       "status": "In progress",
       "group": "technical"
     }

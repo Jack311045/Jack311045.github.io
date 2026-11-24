@@ -3,16 +3,15 @@
     {
       "name": "ChessLens",
       "order": 1,
-      "status": "Active development",
+      "status": "Flagship Systems & ML Project",
       "dates": "2026–Present",
-      "summary": "A reproducible chess data and ML pipeline built around large-scale PGN processing, SQL analytics, and leakage-aware evaluation.",
-      "technology": ["Python", "SQL", "DuckDB", "dbt", "PyArrow / Parquet", "LightGBM", "pytest", "GitHub Actions"],
+      "summary": "End-to-end bounded-memory data engineering, leakage-controlled ML evaluation, and ONNX inference platform built on 10.64M Lichess games and 718.56M moves.",
+      "technology": ["Python", "SQL", "DuckDB", "dbt", "PyArrow / Parquet", "PyTorch", "LightGBM", "ONNX Runtime", "FastAPI", "MLflow", "Optuna", "pytest", "GitHub Actions"],
       "highlights": [
-        "Built streaming Lichess PGN ingestion with deterministic game IDs, HMAC player identifiers, sharded Parquet, resumable manifests, checksums, and staged publication.",
-        "Recorded ingestion report: 10.64M accepted games, 718.56M moves, and 43 shards; this is a saved report, not a fresh run for this portfolio.",
-        "Created a DuckDB/dbt warehouse with 8 models and 39 data tests. The recorded 47 passing nodes were run against a deterministic 10% analysis sample, not the full move set.",
-        "Added temporal and player-holdout controls with leakage audits for policy and value baselines.",
-        "Implemented frequency, logistic-value, and LightGBM ranking baselines with ranking, calibration, subgroup, and game-level bootstrap evaluation."
+        "Engineered a bounded-memory, restartable Python/PyArrow ETL pipeline processing 10.64M games and 718.56M moves into 43 checksummed Parquet shards using concurrent workers, a single-writer manifest with ordered commits, HMAC player anonymization, and crash recovery.",
+        "Built a DuckDB + dbt warehouse validating a deterministic 10% sample across 8 dbt models and 39 automated data-quality tests (keys, move counts, feature boundaries), with process-tree memory and throughput profiling.",
+        "Trained LightGBM and multi-task PyTorch residual CNN models (legal-move masking, checkpoint recovery, MLflow + Optuna tracking) evaluated with temporal and player-disjoint holdouts, NDCG, Brier score calibration, and game-level bootstrap uncertainty intervals.",
+        "Built a typed FastAPI + ONNX Runtime inference service with artifact integrity checks, PyTorch-vs-ONNX ranking parity tests, and GitHub Actions CI."
       ],
       "links": [
         {
@@ -22,17 +21,32 @@
       ]
     },
     {
-      "name": "Sustentra",
+      "name": "Multi-Party Conversational AI for Discord",
       "order": 2,
-      "status": "Team internship project",
-      "dates": "Jun–Sep 2026",
-      "summary": "Schema-driven document intelligence and audit workflows for reviewing structured ESG evidence.",
-      "technology": ["Python", "AWS S3", "Amazon Textract", "OpenAI API", "JSON Schema", "FastAPI", "Streamlit", "pytest"],
+      "status": "Agentic AI & RAG System",
+      "dates": "2026–Present",
+      "summary": "Event-driven, asynchronous Discord AI agent engineered for real-time multi-party channels using two-stage LLM routing, conversation state tracking, and structured RAG.",
+      "technology": ["Python", "Asyncio", "Discord API", "DuckDB", "RAG", "LLM Routing", "Structured Outputs", "LLM Evaluation"],
       "highlights": [
-        "Contributed to a PDF/OCR pipeline that turns document content into schema-backed JSON with source snippets for reviewer traceability.",
-        "Translated ESG and audit requirements into versioned schemas, validation rules, and cross-service contracts with engineering and domain collaborators.",
-        "Helped build a seven-stage Streamlit auditor prototype for intake, extraction review, validation, and evidence workflows; some stages use prepared fixtures rather than connected live services.",
-        "Historical work records cite 40+ documents and a 170+ test suite; the prototype was presented to 10+ audit-industry and client representatives."
+        "Designed a two-stage LLM routing engine combining deterministic rules (explicit mentions, replies, active turn decay) with a lightweight structured LLM classifier for ambiguous follow-ups to minimize unnecessary model calls and token spend.",
+        "Implemented stateful channel activity and turn-lifecycle tracking so the agent responds naturally to indirect follow-ups and disengages cleanly when conversations shift.",
+        "Built a shared DuckDB RAG pipeline indexing dialogue across four personas with speaker, scene, and branch metadata to preserve consistent, grounded character responses.",
+        "Built an evaluation framework measuring routing recall, false-engagement rate, model calls per 1,000 messages, and token efficiency against rule-only baselines."
+      ],
+      "links": []
+    },
+    {
+      "name": "Sustentra ESG Evidence Platform",
+      "order": 3,
+      "status": "Production Internship System",
+      "dates": "May–Sep 2026",
+      "summary": "Full-stack, schema-driven document intelligence and multi-tenant audit workflow platform for regulated ESG reporting (ISO 14064, ISSA 5000, NY Part 253).",
+      "technology": ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL (RLS)", "Alembic", "AWS (S3, Textract, SES)", "OpenAI API", "JSON Schema", "Docker Compose", "Streamlit", "pytest"],
+      "highlights": [
+        "Built a Python document-intelligence pipeline (AWS S3, Amazon Textract, OpenAI API) processing 40+ multi-page client filings in ≤30s with >99% client-validated field accuracy, 98% first-pass JSON schema validation, and page/cell-level source traceability.",
+        "Translated regulatory standards into versioned JSON schemas and deterministic validation libraries integrating 90 formula records, 63 combustion emission factors, and 20 evidence categories.",
+        "Scaffolded a FastAPI + React/TypeScript web platform (Docker Compose), implemented immutable review-decision APIs, added PostgreSQL Row-Level Security (RLS) multi-tenant isolation tests with Alembic migrations, and shipped a unit-tested SMTP/Amazon SES authentication email service via peer code reviews and CI.",
+        "Built a 7-stage Streamlit audit prototype backed by 170+ passing tests and synthetic-evidence smoke-test guides, presenting live workflows to 10+ audit and client stakeholders."
       ],
       "links": [
         {
@@ -46,36 +60,15 @@
       ]
     },
     {
-      "name": "Recipe Discovery & Semantic Search",
-      "order": 3,
-      "status": "Personal project",
-      "dates": "Jan–May 2026",
-      "summary": "Hybrid and multimodal recipe search with custom clustering and an interactive exploration interface.",
-      "technology": ["Python", "PyTorch", "Sentence Transformers", "SigLIP", "TF-IDF", "scikit-learn", "Streamlit"],
-      "highlights": [
-        "Combined SBERT dense embeddings with TF-IDF retrieval, and added SigLIP image, text, and combined image-text search over the Food.com Recipes and Interactions dataset.",
-        "Implemented dietary and recipe filters, negative-feedback query adjustment, optional rating-aware reranking, and a session-based shopping list.",
-        "Built a PyTorch K-means implementation with k-means++ initialization, Lloyd updates, empty-cluster reseeding, and multiple restarts.",
-        "Added PCA and autoencoder-based embedding views for interactive cluster exploration."
-      ],
-      "links": [
-        {
-          "label": "Source code",
-          "url": "https://github.com/Jack311045/recipe-discovery-webapp"
-        }
-      ]
-    },
-    {
       "name": "Met Museum Cross-Modal Search",
       "order": 4,
-      "status": "Personal project",
+      "status": "Multimodal Retrieval System",
       "dates": "Dec 2025–Jan 2026",
-      "summary": "Text-to-image and image-to-text retrieval over Metropolitan Museum of Art Open Access data.",
-      "technology": ["Python", "DINOv2", "Sentence Transformers", "FAISS", "FastAPI", "Streamlit"],
+      "summary": "Bidirectional text-to-image and image-to-text retrieval engine over the Met Open Access collection with contrastive PyTorch projection heads and FAISS indexing.",
+      "technology": ["Python", "PyTorch", "DINOv2", "Sentence Transformers", "FAISS", "FastAPI", "Streamlit"],
       "highlights": [
-        "Combined image and text features with contrastive projection heads for cross-modal retrieval.",
-        "Built FAISS-backed text-to-image and image-to-text search.",
-        "Exposed the workflow through CLI, FastAPI, and Streamlit interfaces."
+        "Precomputed DINOv2 image embeddings and Sentence Transformer text embeddings, trained contrastive projection heads, and built FAISS similarity indexes decoupled from request serving.",
+        "Exposed unified retrieval across typed FastAPI REST endpoints, a CLI, and an interactive Streamlit interface with cached artwork metadata."
       ],
       "links": [
         {
@@ -85,8 +78,27 @@
       ]
     },
     {
-      "name": "NYC Taxi Autoencoder Demo",
+      "name": "Recipe Discovery & Semantic Search",
       "order": 5,
+      "status": "Hybrid Search & Clustering",
+      "dates": "Jan–May 2026",
+      "summary": "Hybrid and multimodal recipe search with custom clustering and an interactive exploration interface.",
+      "technology": ["Python", "PyTorch", "Sentence Transformers", "SigLIP", "TF-IDF", "scikit-learn", "Streamlit"],
+      "highlights": [
+        "Combined SBERT dense embeddings with TF-IDF retrieval, and added SigLIP image, text, and combined image-text multimodal search over the Food.com Recipes and Interactions dataset.",
+        "Implemented dietary filters, negative-feedback query refinement, optional rating-aware reranking, and a session-based shopping list.",
+        "Built a PyTorch k-means++ implementation (Lloyd updates, empty-cluster reseeding, multiple restarts) with silhouette evaluation, plus PCA and autoencoder embedding views for interactive cluster exploration."
+      ],
+      "links": [
+        {
+          "label": "Source code",
+          "url": "https://github.com/Jack311045/recipe-discovery-webapp"
+        }
+      ]
+    },
+    {
+      "name": "NYC Taxi Autoencoder Demo",
+      "order": 6,
       "status": "Interactive ML demo",
       "dates": "",
       "summary": "A PyTorch autoencoder demo for exploring a two-dimensional latent representation of taxi data.",
@@ -104,7 +116,7 @@
     },
     {
       "name": "Chunithm Request Bot",
-      "order": 6,
+      "order": 7,
       "status": "Open-source bot",
       "dates": "",
       "summary": "A Discord bot for managing Chunithm song requests during livestream sessions.",

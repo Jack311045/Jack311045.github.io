@@ -36,7 +36,7 @@
             <p class="eyebrow">PERSONAL PROFILE</p>
             <h1>{{ profile.name }}</h1>
             <p class="lead">{{ profile.headline }}</p>
-            <p class="body-copy">{{ profile.introduction }}</p>
+            {% for paragraph in profile.introduction %}<p class="body-copy">{{ paragraph }}</p>{% endfor %}
             <div class="section-rule"></div>
             <div class="profile-facts">
               <section class="profile-fact">
@@ -66,7 +66,7 @@
           <article class="document">
             <p class="eyebrow">SELECTED WORK</p>
             <h1>Projects</h1>
-            <p class="body-copy muted">Selected projects in data engineering, applied machine learning, semantic search, and document intelligence.</p>
+            <p class="body-copy muted">Selected projects in applied AI, data and ML engineering, full-stack systems, and document intelligence.</p>
             <div class="accordion-list" data-accordion-list="projects">
               {% for project in projects.items | sort(false, false, "order") %}
                 <details class="entry-card" {% if loop.first %}open{% endif %}>

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const requiredProjects = ["ChessLens", "Sustentra", "Recipe Discovery & Semantic Search"];
+const requiredProjects = ["ChessLens", "Multi-Party Conversational AI for Discord", "Sustentra ESG Evidence Platform"];
 const requiredEmployers = ["Sustentra", "GigaCloud Technology", "CITIC Securities"];
 
 function readJson(filePath) {
@@ -51,7 +51,7 @@ export default function (eleventyConfig) {
       throw new Error("Career links must have labels and absolute HTTPS URLs.");
     }
   }
-  if (!Array.isArray(skills.groups) || !skills.groups.length || !Array.isArray(skills.coursework) || skills.coursework.length !== 30) {
+  if (!Array.isArray(skills.groups) || !skills.groups.length || !Array.isArray(skills.coursework) || skills.coursework.length !== 32) {
     throw new Error("Skills data must include groups and coursework lists.");
   }
   const courseCodes = new Set();
@@ -61,17 +61,18 @@ export default function (eleventyConfig) {
     if (!course.term || !course.code || !course.name || !["Completed", "In progress"].includes(course.status) || !["technical", "additional"].includes(course.group)) {
       throw new Error("Each course needs a term, code, name, status, and technical/additional group.");
     }
-    const identity = `${course.term}:${course.code}`;
+    const identity = `${course.term}:${course.code}:${course.name}`;
     if (courseCodes.has(identity)) throw new Error(`Duplicate coursework entry: ${identity}`);
     courseCodes.add(identity);
     if (course.status === "Completed") completedCourses += 1;
     else inProgressCourses += 1;
   }
-  if (completedCourses !== 26 || inProgressCourses !== 4) {
-    throw new Error(`Expected 26 completed and 4 in-progress courses; found ${completedCourses} and ${inProgressCourses}.`);
+  if (completedCourses !== 26 || inProgressCourses !== 6) {
+    throw new Error(`Expected 26 completed and 6 in-progress courses; found ${completedCourses} and ${inProgressCourses}.`);
   }
-  if (!profile.education || !profile.location || !profile.introduction || profile.introduction.trim().split(/\s+/).length < 70 || profile.introduction.trim().split(/\s+/).length > 110) {
-    throw new Error("Profile needs verified education and location details and a 70–110 word introduction.");
+  const introWords = [].concat(profile.introduction || "").join(" ").trim().split(/\s+/).length;
+  if (!profile.education || !profile.location || !profile.introduction || introWords < 70 || introWords > 200) {
+    throw new Error("Profile needs verified education and location details and a 70–200 word introduction.");
   }
   for (const item of [...projects.items, ...experience.items]) {
     if (!Number.isInteger(item.order)) {

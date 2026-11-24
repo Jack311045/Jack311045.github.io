@@ -43,6 +43,7 @@ h1, h2, h3, p { overflow-wrap: anywhere; }
 h1 { margin: 0 0 10px; color: #eee; font-size: clamp(24px, 3vw, 34px); font-weight: 500; letter-spacing: -.04em; }
 .lead { margin: 0 0 22px; color: var(--green); font-size: 15px; }
 .body-copy { max-width: 700px; line-height: 1.8; }
+.body-copy + .body-copy { margin-top: 14px; }
 .muted { color: #a1a1a1; }
 h2 { margin: 25px 0 13px; color: #ddd; font-size: 17px; font-weight: 500; }
 .section-rule { height: 1px; max-width: 700px; margin: 26px 0; background: var(--border); }
